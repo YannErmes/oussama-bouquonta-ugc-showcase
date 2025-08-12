@@ -30,7 +30,7 @@ const HeroSection = () => {
       <div className="relative z-10 text-center max-w-5xl mx-auto px-6">
         <div className="animate-fade-in">
           <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
-            <span className="block">Oussama Bouquonta</span>
+            <span className="block">Oussama Bouqontar</span>
             <span className="block text-gradient">Creative UGC Content</span>
             <span className="block">for Your Brand</span>
           </h1>
@@ -45,7 +45,7 @@ const HeroSection = () => {
               variant="hero" 
               size="xl"
               className="group"
-              onClick={() => window.open('https://wa.me/+212123456789', '_blank')}
+              onClick={() => window.open('https://wa.me/+212650792723', '_blank')}
             >
               <MessageCircle className="mr-3 h-6 w-6 group-hover:scale-110 transition-transform" />
               Let's Chat on WhatsApp
@@ -55,7 +55,7 @@ const HeroSection = () => {
               variant="social" 
               size="xl"
               className="group"
-              onClick={() => window.open('https://instagram.com/oussama.bouquonta', '_blank')}
+              onClick={() => window.open('https://www.instagram.com/oussama_bouqontar1/', '_blank')}
             >
               <Instagram className="mr-3 h-6 w-6 group-hover:scale-110 transition-transform" />
               Follow on Instagram

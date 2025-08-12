@@ -34,7 +34,7 @@ const AboutSection = () => {
             <div className="relative z-10 animate-scale-in">
               <img
                 src={oussamaProfile}
-                alt="Oussama Bouquonta"
+                alt="Oussama Bouqontar"
                 className="w-full max-w-lg mx-auto rounded-2xl shadow-elegant hover:shadow-hover transition-smooth"
               />
             </div>

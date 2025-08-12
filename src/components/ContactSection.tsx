@@ -25,7 +25,7 @@ const ContactSection = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12 max-w-2xl mx-auto">
             <div 
               className="group p-8 bg-card rounded-2xl shadow-elegant hover:shadow-hover transition-smooth cursor-pointer border border-border"
-              onClick={() => window.open('https://wa.me/+212123456789', '_blank')}
+              onClick={() => window.open('https://wa.me/+212650792723', '_blank')}
             >
               <div className="p-4 bg-green-500/10 rounded-xl mb-4 mx-auto w-fit group-hover:bg-green-500/20 transition-colors">
                 <MessageCircle className="h-8 w-8 text-green-500" />
@@ -40,7 +40,7 @@ const ContactSection = () => {
 
             <div 
               className="group p-8 bg-card rounded-2xl shadow-elegant hover:shadow-hover transition-smooth cursor-pointer border border-border"
-              onClick={() => window.open('https://instagram.com/oussama.bouquonta', '_blank')}
+              onClick={() => window.open('https://www.instagram.com/oussama_bouqontar1/', '_blank')}
             >
               <div className="p-4 bg-pink-500/10 rounded-xl mb-4 mx-auto w-fit group-hover:bg-pink-500/20 transition-colors">
                 <Instagram className="h-8 w-8 text-pink-500" />
