@@ -1,30 +1,27 @@
 import { Camera, Edit3, Users, TrendingUp } from "lucide-react";
 import oussamaProfile from "@/assets/oussama-profile.jpg";
-import { useLanguage } from "@/hooks/useLanguage";
 
 const AboutSection = () => {
-  const { t } = useLanguage();
-  
   const skills = [
     {
       icon: Camera,
-      title: t("about.skill1.title"),
-      description: t("about.skill1.desc")
+      title: "Content Creation",
+      description: "Professional video production with state-of-the-art equipment"
     },
     {
       icon: Edit3,
-      title: t("about.skill2.title"),
-      description: t("about.skill2.desc")
+      title: "Video Editing",
+      description: "Expert post-production and storytelling through visuals"
     },
     {
       icon: Users,
-      title: t("about.skill3.title"),
-      description: t("about.skill3.desc")
+      title: "Audience Engagement",
+      description: "Understanding what resonates with target demographics"
     },
     {
       icon: TrendingUp,
-      title: t("about.skill4.title"),
-      description: t("about.skill4.desc")
+      title: "Brand Growth",
+      description: "Proven track record of driving measurable results"
     }
   ];
 
@@ -48,16 +45,20 @@ const AboutSection = () => {
           {/* Content */}
           <div className="animate-fade-in">
             <h2 className="font-heading text-4xl lg:text-5xl font-bold mb-8">
-              {t("about.title").split(" ")[0]} <span className="text-gradient">{t("about.title").split(" ")[1]}</span>
+              About <span className="text-gradient">Me</span>
             </h2>
             
             <div className="prose prose-lg max-w-none mb-10">
               <p className="text-neutral-600 text-lg leading-relaxed mb-6">
-                {t("about.bio1")}
+                Based in Morocco, I specialize in creating authentic, high-converting 
+                User Generated Content for brands worldwide. From concept to final cut, 
+                I deliver engaging videos that resonate with your target audience.
               </p>
               
               <p className="text-neutral-600 text-lg leading-relaxed">
-                {t("about.bio2")}
+                With a deep understanding of social media trends and consumer behavior, 
+                I craft content that not only looks great but drives real business results. 
+                Every video tells a story that connects brands with their community.
               </p>
             </div>
 

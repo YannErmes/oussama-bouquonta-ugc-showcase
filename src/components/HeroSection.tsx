@@ -1,23 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { ChevronDown, MessageCircle, Instagram, Play } from "lucide-react";
 import heroBackground from "@/assets/hero-background.jpg";
-import { useLanguage } from "@/hooks/useLanguage";
-import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 const HeroSection = () => {
-  const { t } = useLanguage();
-  
   const scrollToAbout = () => {
     document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Language Switcher */}
-      <div className="absolute top-6 right-6 z-20">
-        <LanguageSwitcher />
-      </div>
-
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -39,12 +30,14 @@ const HeroSection = () => {
       <div className="relative z-10 text-center max-w-5xl mx-auto px-6">
         <div className="animate-fade-in">
           <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
-            <span className="block">{t("hero.name")}</span>
-            <span className="block text-gradient">{t("hero.title")}</span>
+            <span className="block">Oussama Bouqontar</span>
+            <span className="block text-gradient">Creative UGC Content</span>
+            <span className="block">for Your Brand</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
-            {t("hero.subtitle")}
+            Helping brands connect with their audience through authentic, engaging videos
+            that drive real results and meaningful connections.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
@@ -55,7 +48,7 @@ const HeroSection = () => {
               onClick={() => window.open('https://wa.me/+212650792723', '_blank')}
             >
               <MessageCircle className="mr-3 h-6 w-6 group-hover:scale-110 transition-transform" />
-              {t("hero.whatsapp")}
+              Let's Chat on WhatsApp
             </Button>
             
             <Button 
@@ -65,13 +58,13 @@ const HeroSection = () => {
               onClick={() => window.open('https://www.instagram.com/oussama_bouqontar1/', '_blank')}
             >
               <Instagram className="mr-3 h-6 w-6 group-hover:scale-110 transition-transform" />
-              {t("hero.instagram")}
+              Follow on Instagram
             </Button>
           </div>
 
           <div className="flex flex-col items-center">
             <p className="text-sm text-muted-foreground mb-4 font-medium">
-              {t("hero.scroll")}
+              Scroll to discover my work
             </p>
             <button
               onClick={scrollToAbout}
