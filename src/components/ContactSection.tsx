@@ -60,11 +60,11 @@ const ContactSection = () => {
             <Button
               variant="outline"
               size="lg"
-              onClick={() => window.location.href = 'mailto:oussama@example.com'}
+              onClick={() => window.location.href = 'mailto:oussamabouquontar15@gmail.com'}
               className="group"
             >
               <Mail className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
-              oussama@example.com
+              oussamabouquontar15@gmail.com
             </Button>
           </div>
 

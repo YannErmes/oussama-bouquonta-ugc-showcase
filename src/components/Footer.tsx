@@ -31,7 +31,7 @@ const Footer = () => {
               <MessageCircle className="h-6 w-6 group-hover:scale-110 transition-transform" />
             </button>
             <button
-              onClick={() => window.location.href = 'mailto:oussama@example.com'}
+              onClick={() => window.location.href = 'mailto:oussamabouquontar15@gmail.com'}
               className="p-3 bg-neutral-800 rounded-lg hover:bg-neutral-700 transition-colors group"
               aria-label="Email"
             >
