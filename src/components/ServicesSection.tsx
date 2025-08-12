@@ -99,7 +99,7 @@ const ServicesSection = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
-                onClick={() => window.open('https://wa.me/+212123456789', '_blank')}
+                onClick={() => window.open('https://wa.me/+212710038821', '_blank')}
                 className="px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:shadow-hover hover:scale-105 transition-bounce shadow-creative"
               >
                 Get Custom Quote
