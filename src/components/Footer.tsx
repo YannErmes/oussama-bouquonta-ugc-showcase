@@ -1,6 +1,8 @@
 import { Instagram, MessageCircle, Mail } from "lucide-react";
+import { useLanguage } from "@/hooks/useLanguage";
 
 const Footer = () => {
+  const { t } = useLanguage();
   return (
     <footer className="bg-neutral-900 text-white py-12">
       <div className="max-w-7xl mx-auto px-6">
@@ -10,8 +12,7 @@ const Footer = () => {
             Oussama <span className="text-primary">Bouqontar</span>
           </h3>
           <p className="text-neutral-400 mb-8 max-w-md mx-auto">
-            Creative UGC Content Creator helping brands connect with their audience 
-            through authentic, engaging videos.
+            {t("footer.tagline")}
           </p>
 
           {/* Social Links */}
@@ -42,7 +43,7 @@ const Footer = () => {
           {/* Copyright */}
           <div className="pt-8 border-t border-neutral-800">
             <p className="text-neutral-500 text-sm">
-              © 2025 Oussama Bouqontar — UGC Creator. All rights reserved.
+              {t("footer.copyright")}
             </p>
           </div>
         </div>

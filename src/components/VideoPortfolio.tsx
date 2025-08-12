@@ -1,7 +1,9 @@
 import { Play, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/hooks/useLanguage";
 
 const VideoPortfolio = () => {
+  const { t } = useLanguage();
   const videos = [
     {
       id: "11U4k-6htrFg0bI0TZG1AaXL8aPg73dNI",
@@ -24,11 +26,10 @@ const VideoPortfolio = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="font-heading text-4xl lg:text-5xl font-bold mb-6">
-            My <span className="text-gradient">Work</span>
+            {t("portfolio.title")} <span className="text-gradient"></span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Explore a collection of authentic UGC videos that have helped brands 
-            connect with their audience and drive meaningful engagement.
+            {t("portfolio.subtitle")}
           </p>
         </div>
 
@@ -57,7 +58,7 @@ const VideoPortfolio = () => {
                     onClick={() => window.open(`https://drive.google.com/file/d/${video.id}/view`, '_blank')}
                   >
                     <ExternalLink className="mr-2 h-5 w-5" />
-                    View Full Screen
+                    {t("portfolio.viewFullScreen")}
                   </Button>
                 </div>
               </div>
@@ -81,10 +82,10 @@ const VideoPortfolio = () => {
             variant="creative"
             size="xl"
             className="group"
-            onClick={() => window.open('https://wa.me/+212123456789', '_blank')}
+            onClick={() => window.open('https://wa.me/+212650792723', '_blank')}
           >
             <Play className="mr-3 h-6 w-6 group-hover:scale-110 transition-transform" />
-            See More Work & Get Quote
+            {t("portfolio.seeMore")}
           </Button>
         </div>
       </div>
