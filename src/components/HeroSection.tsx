@@ -43,6 +43,7 @@ const HeroSection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
+            {/* WhatsApp Button */}
             <Button 
               variant="hero" 
               size="xl"
@@ -53,6 +54,7 @@ const HeroSection = () => {
               {t('hero.cta.whatsapp')}
             </Button>
             
+            {/* Instagram Button */}
             <Button 
               variant="social" 
               size="xl"
@@ -61,6 +63,17 @@ const HeroSection = () => {
             >
               <Instagram className="mr-3 h-6 w-6 group-hover:scale-110 transition-transform" />
               {t('hero.cta.instagram')}
+            </Button>
+
+            {/* Fiverr Button */}
+            <Button 
+              variant="outline" 
+              size="xl"
+              className="group bg-green-600 hover:bg-green-700 text-white border-none"
+              onClick={() => window.open('https://www.fiverr.com/oussamabouqo500/create-engaging-ugc-videos-for-your-app-or-website', '_blank')}
+            >
+              <Play className="mr-3 h-6 w-6 group-hover:scale-110 transition-transform" />
+              Fiverr
             </Button>
           </div>
 
