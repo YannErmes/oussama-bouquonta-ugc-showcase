@@ -1,19 +1,24 @@
+
 import { Play, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
 
 const VideoPortfolio = () => {
   const videos = [
     {
-      id: "finished-ugc",
-      title: "UGC Finished 2",
-      description: "Une vidéo utilisateur générée, hébergée sur Supabase",
-      thumbnail: "/thumbnails/finished-ugc.jpg", // Génère et héberge cette miniature
-      videoUrl: "https://fayrviwbbspmiqztcyhv.supabase.co/storage/v1/object/public/iotimages/finished%202%20ugc.mp4"
+      id: "11U4k-6htrFg0bI0TZG1AaXL8aPg73dNI",
+      title: "Product Showcase Video",
+      description: "Authentic product demonstration with engaging storytelling",
+      thumbnail: `https://drive.google.com/thumbnail?id=11U4k-6htrFg0bI0TZG1AaXL8aPg73dNI&sz=w1000`,
+      embedUrl: "https://drive.google.com/file/d/11U4k-6htrFg0bI0TZG1AaXL8aPg73dNI/preview"
+    },
+    {
+      id: "1Nc2HKPt2yypS6CcZlKT1Avq_VsppivPa",
+      title: "Lifestyle Content Creation",
+      description: "Lifestyle brand integration with natural storytelling",
+      thumbnail: `https://drive.google.com/thumbnail?id=1Nc2HKPt2yypS6CcZlKT1Avq_VsppivPa&sz=w1000`,
+      embedUrl: "https://drive.google.com/file/d/1Nc2HKPt2yypS6CcZlKT1Avq_VsppivPa/preview"
     }
   ];
-
-  const [playingVideo, setPlayingVideo] = useState(null);
 
   return (
     <section className="py-20 lg:py-32 bg-background">
@@ -35,34 +40,30 @@ const VideoPortfolio = () => {
               className="group relative bg-card rounded-2xl overflow-hidden shadow-elegant hover:shadow-hover transition-smooth animate-scale-in border border-border"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
+              {/* Video Container */}
               <div className="relative aspect-video bg-neutral-100">
-                {playingVideo === video.id ? (
-                  <video
-                    src={video.videoUrl}
-                    controls
-                    autoPlay
-                    className="w-full h-full rounded-2xl"
-                  />
-                ) : (
-                  <div className="w-full h-full relative cursor-pointer">
-                    <img
-                      src={video.thumbnail}
-                      alt={video.title}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center bg-black/40">
-                      <Button
-                        variant="hero"
-                        size="lg"
-                        className="rounded-full p-6"
-                        onClick={() => setPlayingVideo(video.id)}
-                      >
-                        <Play className="h-8 w-8" />
-                      </Button>
-                    </div>
-                  </div>
-                )}
+                <iframe
+                  src={video.embedUrl}
+                  className="w-full h-full"
+                  allow="autoplay"
+                  title={video.title}
+                />
+                
+                {/* Hover Overlay */}
+                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <Button
+                    variant="hero"
+                    size="lg"
+                    className="transform scale-0 group-hover:scale-100 transition-transform"
+                    onClick={() => window.open(`https://drive.google.com/file/d/${video.id}/view`, '_blank')}
+                  >
+                    <ExternalLink className="mr-2 h-5 w-5" />
+                    View Full Screen
+                  </Button>
+                </div>
               </div>
+
+              {/* Content */}
               <div className="p-6">
                 <h3 className="font-semibold text-xl mb-3 text-card-foreground">
                   {video.title}
@@ -75,6 +76,7 @@ const VideoPortfolio = () => {
           ))}
         </div>
 
+        {/* Call to Action */}
         <div className="text-center">
           <Button
             variant="creative"
@@ -91,4 +93,4 @@ const VideoPortfolio = () => {
   );
 };
 
-export default VideoPortfolio;
+export default VideoPortfolio; 
