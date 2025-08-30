@@ -98,18 +98,7 @@ const ServicesSection = () => {
               Let's discuss your project and create content that drives real results for your brand.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button
-                onClick={() => window.open('https://wa.me/+212650792723', '_blank')}
-                className="px-8 py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:shadow-hover hover:scale-105 transition-bounce shadow-creative"
-              >
-                Get Custom Quote
-              </button>
-              <button
-                onClick={() => window.open('https://instagram.com/oussama.bouquonta', '_blank')}
-                className="px-8 py-4 bg-neutral-900 text-white rounded-lg font-medium hover:bg-neutral-800 hover:shadow-elegant transition-smooth"
-              >
-                View More Examples
-              </button>
+             
             </div>
           </div>
         </div>
