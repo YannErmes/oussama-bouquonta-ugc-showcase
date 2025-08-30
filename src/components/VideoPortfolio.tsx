@@ -1,5 +1,5 @@
-import { useRef, useState } from "react";
-import { Play } from "lucide-react";
+
+import { Play, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const VideoPortfolio = () => {
@@ -9,21 +9,20 @@ const VideoPortfolio = () => {
       title: "Product Showcase Video",
       description: "Authentic product demonstration with engaging storytelling",
       thumbnail: `https://drive.google.com/thumbnail?id=11U4k-6htrFg0bI0TZG1AaXL8aPg73dNI&sz=w1000`,
-      src: "https://drive.google.com/uc?export=download&id=11U4k-6htrFg0bI0TZG1AaXL8aPg73dNI"
+      embedUrl: "https://drive.google.com/file/d/11U4k-6htrFg0bI0TZG1AaXL8aPg73dNI/preview"
     },
     {
       id: "1Nc2HKPt2yypS6CcZlKT1Avq_VsppivPa",
       title: "Lifestyle Content Creation",
       description: "Lifestyle brand integration with natural storytelling",
       thumbnail: `https://drive.google.com/thumbnail?id=1Nc2HKPt2yypS6CcZlKT1Avq_VsppivPa&sz=w1000`,
-      src: "https://drive.google.com/uc?export=download&id=1Nc2HKPt2yypS6CcZlKT1Avq_VsppivPa"
+      embedUrl: "https://drive.google.com/file/d/1Nc2HKPt2yypS6CcZlKT1Avq_VsppivPa/preview"
     }
   ];
 
   return (
     <section className="py-20 lg:py-32 bg-background">
       <div className="max-w-7xl mx-auto px-6">
-        {/* Heading */}
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="font-heading text-4xl lg:text-5xl font-bold mb-6">
             My <span className="text-gradient">Work</span>
@@ -34,10 +33,46 @@ const VideoPortfolio = () => {
           </p>
         </div>
 
-        {/* Videos Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
           {videos.map((video, index) => (
-            <VideoCard key={video.id} video={video} index={index} />
+            <div
+              key={video.id}
+              className="group relative bg-card rounded-2xl overflow-hidden shadow-elegant hover:shadow-hover transition-smooth animate-scale-in border border-border"
+              style={{ animationDelay: `${index * 0.2}s` }}
+            >
+              {/* Video Container */}
+              <div className="relative aspect-video bg-neutral-100">
+                <iframe
+                  src={video.embedUrl}
+                  className="w-full h-full"
+                  allow="autoplay"
+                  title={video.title}
+                />
+                
+                {/* Hover Overlay */}
+                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <Button
+                    variant="hero"
+                    size="lg"
+                    className="transform scale-0 group-hover:scale-100 transition-transform"
+                    onClick={() => window.open(`https://drive.google.com/file/d/${video.id}/view`, '_blank')}
+                  >
+                    <ExternalLink className="mr-2 h-5 w-5" />
+                    View Full Screen
+                  </Button>
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="p-6">
+                <h3 className="font-semibold text-xl mb-3 text-card-foreground">
+                  {video.title}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  {video.description}
+                </p>
+              </div>
+            </div>
           ))}
         </div>
 
@@ -58,66 +93,4 @@ const VideoPortfolio = () => {
   );
 };
 
-// 🎬 Video Card Component
-const VideoCard = ({ video, index }) => {
-  const videoRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-
-  const handlePlay = () => {
-    if (videoRef.current) {
-      videoRef.current.play()
-        .then(() => {
-          setIsPlaying(true); // succès → overlay disparaît
-        })
-        .catch(err => {
-          console.error("Erreur de lecture vidéo :", err);
-        });
-    }
-  };
-
-  return (
-    <div
-      className="group relative bg-card rounded-2xl overflow-hidden shadow-elegant hover:shadow-hover transition-smooth animate-scale-in border border-border"
-      style={{ animationDelay: `${index * 0.2}s` }}
-    >
-      {/* Video Container */}
-      <div className="relative aspect-video bg-neutral-100">
-        <video
-          ref={videoRef}
-          poster={video.thumbnail}
-          className="w-full h-full rounded-lg"
-          controls={isPlaying} // affiche contrôles seulement après clic
-        >
-          <source src={video.src} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-
-        {/* Overlay Play Button */}
-        {!isPlaying && (
-          <div className="absolute inset-0 flex items-center justify-center bg-black/40">
-            <Button
-              variant="creative"
-              size="xl"
-              className="rounded-full p-6"
-              onClick={handlePlay}
-            >
-              <Play className="h-10 w-10" />
-            </Button>
-          </div>
-        )}
-      </div>
-
-      {/* Content */}
-      <div className="p-6">
-        <h3 className="font-semibold text-xl mb-3 text-card-foreground">
-          {video.title}
-        </h3>
-        <p className="text-muted-foreground leading-relaxed">
-          {video.description}
-        </p>
-      </div>
-    </div>
-  );
-};
-
-export default VideoPortfolio;
+export default 
