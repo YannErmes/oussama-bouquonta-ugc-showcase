@@ -10,7 +10,7 @@ const Footer = () => {
             Oussama <span className="text-primary">Bouqontar</span>
           </h3>
           <p className="text-neutral-400 mb-8 max-w-md mx-auto">
-            Creative UGC Content Creator helping brands connect with their audience 
+            Creative UGC Creator helping brands connect with their audience 
             through authentic, engaging videos.
           </p>
 
