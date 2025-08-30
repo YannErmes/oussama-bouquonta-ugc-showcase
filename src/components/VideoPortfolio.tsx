@@ -58,15 +58,20 @@ const VideoPortfolio = () => {
   );
 };
 
-// 🎬 Composant individuel pour une vidéo
+// 🎬 Video Card Component
 const VideoCard = ({ video, index }) => {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
   const handlePlay = () => {
     if (videoRef.current) {
-      videoRef.current.play();
-      setIsPlaying(true);
+      videoRef.current.play()
+        .then(() => {
+          setIsPlaying(true); // succès → overlay disparaît
+        })
+        .catch(err => {
+          console.error("Erreur de lecture vidéo :", err);
+        });
     }
   };
 
@@ -81,7 +86,7 @@ const VideoCard = ({ video, index }) => {
           ref={videoRef}
           poster={video.thumbnail}
           className="w-full h-full rounded-lg"
-          controls={isPlaying} // contrôles seulement après clic
+          controls={isPlaying} // affiche contrôles seulement après clic
         >
           <source src={video.src} type="video/mp4" />
           Your browser does not support the video tag.
@@ -89,7 +94,7 @@ const VideoCard = ({ video, index }) => {
 
         {/* Overlay Play Button */}
         {!isPlaying && (
-          <div className="absolute inset-0 flex items-center justify-center bg-black/30">
+          <div className="absolute inset-0 flex items-center justify-center bg-black/40">
             <Button
               variant="creative"
               size="xl"
