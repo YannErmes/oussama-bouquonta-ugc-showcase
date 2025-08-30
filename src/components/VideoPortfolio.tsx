@@ -1,3 +1,4 @@
+import { useRef, useState } from "react";
 import { Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -36,33 +37,7 @@ const VideoPortfolio = () => {
         {/* Videos Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
           {videos.map((video, index) => (
-            <div
-              key={video.id}
-              className="group relative bg-card rounded-2xl overflow-hidden shadow-elegant hover:shadow-hover transition-smooth animate-scale-in border border-border"
-              style={{ animationDelay: `${index * 0.2}s` }}
-            >
-              {/* Video Player */}
-              <div className="relative aspect-video bg-neutral-100">
-                <video 
-                  controls
-                  poster={video.thumbnail}
-                  className="w-full h-full rounded-lg"
-                >
-                  <source src={video.src} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              </div>
-
-              {/* Content */}
-              <div className="p-6">
-                <h3 className="font-semibold text-xl mb-3 text-card-foreground">
-                  {video.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {video.description}
-                </p>
-              </div>
-            </div>
+            <VideoCard key={video.id} video={video} index={index} />
           ))}
         </div>
 
@@ -83,5 +58,61 @@ const VideoPortfolio = () => {
   );
 };
 
-export default VideoPortfolio;
+// 🎬 Composant individuel pour une vidéo
+const VideoCard = ({ video, index }) => {
+  const videoRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
 
+  const handlePlay = () => {
+    if (videoRef.current) {
+      videoRef.current.play();
+      setIsPlaying(true);
+    }
+  };
+
+  return (
+    <div
+      className="group relative bg-card rounded-2xl overflow-hidden shadow-elegant hover:shadow-hover transition-smooth animate-scale-in border border-border"
+      style={{ animationDelay: `${index * 0.2}s` }}
+    >
+      {/* Video Container */}
+      <div className="relative aspect-video bg-neutral-100">
+        <video
+          ref={videoRef}
+          poster={video.thumbnail}
+          className="w-full h-full rounded-lg"
+          controls={isPlaying} // contrôles seulement après clic
+        >
+          <source src={video.src} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
+        {/* Overlay Play Button */}
+        {!isPlaying && (
+          <div className="absolute inset-0 flex items-center justify-center bg-black/30">
+            <Button
+              variant="creative"
+              size="xl"
+              className="rounded-full p-6"
+              onClick={handlePlay}
+            >
+              <Play className="h-10 w-10" />
+            </Button>
+          </div>
+        )}
+      </div>
+
+      {/* Content */}
+      <div className="p-6">
+        <h3 className="font-semibold text-xl mb-3 text-card-foreground">
+          {video.title}
+        </h3>
+        <p className="text-muted-foreground leading-relaxed">
+          {video.description}
+        </p>
+      </div>
+    </div>
+  );
+};
+
+export default VideoPortfolio;
