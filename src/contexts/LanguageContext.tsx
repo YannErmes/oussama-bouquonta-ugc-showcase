@@ -26,7 +26,7 @@ const translations = {
     'about.title.highlight': 'Me',
     'about.description.p1': 'Based in Morocco, I specialize in creating authentic, high-converting User Generated Content for brands worldwide. From concept to final cut, I deliver engaging videos that resonate with your target audience.',
     'about.description.p2': 'With a deep understanding of social media trends and consumer behavior, I craft content that not only looks great but drives real business results. Every video tells a story that connects brands with their community.',
-    'about.skills.content.title': 'Quality video',
+    'about.skills.content.title': 'High Quality',
     'about.skills.content.desc': 'Professional video production with state-of-the-art equipment',
     'about.skills.editing.title': 'Video Editing',
     'about.skills.editing.desc': 'Expert post-production and storytelling through visuals',
