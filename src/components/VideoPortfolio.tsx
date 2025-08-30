@@ -93,4 +93,4 @@ const VideoPortfolio = () => {
   );
 };
 
-export default 
+export default VideoPortfolio;
