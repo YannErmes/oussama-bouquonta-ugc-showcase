@@ -1,6 +1,6 @@
 import { Camera, Edit3, Users, TrendingUp } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import oussamaProfile from "@/assets/oussama-profile.png";
+import oussamaProfile from "@/assets/oussama-profile.jpg";
 
 const AboutSection = () => {
   const { t } = useLanguage();
