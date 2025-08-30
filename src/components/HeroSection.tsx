@@ -66,15 +66,21 @@ const HeroSection = () => {
             </Button>
 
             {/* Fiverr Button */}
-            <Button 
-              variant="outline" 
-              size="xl"
-              className="group bg-green-600 hover:bg-green-700 text-white border-none"
-              onClick={() => window.open('https://www.fiverr.com/oussamabouqo500/create-engaging-ugc-videos-for-your-app-or-website', '_blank')}
-            >
-              <Play className="mr-3 h-6 w-6 group-hover:scale-110 transition-transform" />
-              Fiverr
-            </Button>
+
+<Button 
+  size="xl"
+  className="group relative overflow-hidden rounded-2xl px-8 py-6 font-semibold 
+             bg-gradient-to-r from-green-500 to-emerald-600 
+             hover:from-emerald-600 hover:to-green-500 
+             text-white shadow-lg shadow-green-500/40 
+             transition-all duration-300 ease-out transform hover:scale-105"
+  onClick={() => window.open('https://www.fiverr.com/oussamabouqo500/create-engaging-ugc-videos-for-your-app-or-website', '_blank')}
+>
+  <span className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-20 transition-opacity"></span>
+  <Play className="mr-3 h-6 w-6 group-hover:scale-125 transition-transform" />
+  Get on Fiverr
+</Button>
+
           </div>
 
           <div className="flex flex-col items-center">
