@@ -32,13 +32,13 @@ const HeroSection = () => {
       {/* Main Content */}
       <div className="relative z-10 text-center max-w-5xl mx-auto px-6">
         <div className="animate-fade-in">
-          <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
+          <h1 className="font-heading text-3xl sm:text-4xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
             <span className="block">{t('hero.title.line1')}</span>
             <span className="block text-gradient">{t('hero.title.line2')}</span>
             <span className="block">{t('hero.title.line3')}</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
             {t('hero.subtitle')}
           </p>
 
@@ -66,20 +66,19 @@ const HeroSection = () => {
             </Button>
 
             {/* Fiverr Button */}
-
-<Button 
-  size="xl"
-  className="group relative overflow-hidden rounded-2xl px-8 py-6 font-semibold 
-             bg-gradient-to-r from-green-500 to-emerald-600 
-             hover:from-emerald-600 hover:to-green-500 
-             text-white shadow-lg shadow-green-500/40 
-             transition-all duration-300 ease-out transform hover:scale-105"
-  onClick={() => window.open('https://www.fiverr.com/oussamabouqo500/create-engaging-ugc-videos-for-your-app-or-website', '_blank')}
->
-  <span className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-20 transition-opacity"></span>
-  <Play className="mr-3 h-6 w-6 group-hover:scale-125 transition-transform" />
-  Get on Fiverr
-</Button>
+            <Button 
+              size="xl"
+              className="group relative overflow-hidden rounded-2xl px-8 py-6 font-semibold 
+                         bg-gradient-to-r from-green-500 to-emerald-600 
+                         hover:from-emerald-600 hover:to-green-500 
+                         text-white shadow-lg shadow-green-500/40 
+                         transition-all duration-300 ease-out transform hover:scale-105"
+              onClick={() => window.open('https://www.fiverr.com/oussamabouqo500/create-engaging-ugc-videos-for-your-app-or-website', '_blank')}
+            >
+              <span className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-20 transition-opacity"></span>
+              <Play className="mr-3 h-6 w-6 group-hover:scale-125 transition-transform" />
+              Get on Fiverr
+            </Button>
 
           </div>
 
