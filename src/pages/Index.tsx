@@ -4,10 +4,12 @@ import VideoPortfolio from "@/components/VideoPortfolio";
 import ServicesSection from "@/components/ServicesSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import LanguageSwitch from "@/components/LanguageSwitch";
 
 const Index = () => {
   return (
     <main className="overflow-x-hidden">
+      <LanguageSwitch />
       <HeroSection />
       <AboutSection />
       <VideoPortfolio />

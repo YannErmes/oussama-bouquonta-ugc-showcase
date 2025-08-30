@@ -1,34 +1,37 @@
 import { Video, ShoppingBag, Heart, Star, Clock, Zap } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const ServicesSection = () => {
+  const { t } = useLanguage();
+
   const services = [
     {
       icon: Video,
-      title: "UGC Video Creation",
-      duration: "15-60s ads",
-      description: "Authentic video content that feels natural and drives conversions. Perfect for social media advertising campaigns.",
-      features: ["Professional filming", "Multiple angles", "Raw authenticity", "High engagement"]
+      title: t('services.ugc.title'),
+      duration: t('services.ugc.duration'),
+      description: t('services.ugc.desc'),
+      features: [t('services.ugc.feature1'), t('services.ugc.feature2'), t('services.ugc.feature3'), t('services.ugc.feature4')]
     },
     {
       icon: ShoppingBag,
-      title: "Product Showcases",
-      duration: "30-90s demos",
-      description: "Detailed product demonstrations that highlight key features and benefits in an engaging, trustworthy format.",
-      features: ["Feature highlights", "Real-world usage", "Honest reviews", "Call-to-action"]
+      title: t('services.product.title'),
+      duration: t('services.product.duration'),
+      description: t('services.product.desc'),
+      features: [t('services.product.feature1'), t('services.product.feature2'), t('services.product.feature3'), t('services.product.feature4')]
     },
     {
       icon: Heart,
-      title: "Lifestyle Videos",
-      duration: "45-120s stories",
-      description: "Lifestyle integration content that shows your product as part of daily life, building emotional connections.",
-      features: ["Natural integration", "Storytelling", "Emotional appeal", "Brand alignment"]
+      title: t('services.lifestyle.title'),
+      duration: t('services.lifestyle.duration'),
+      description: t('services.lifestyle.desc'),
+      features: [t('services.lifestyle.feature1'), t('services.lifestyle.feature2'), t('services.lifestyle.feature3'), t('services.lifestyle.feature4')]
     },
     {
       icon: Star,
-      title: "Testimonial Content",
-      duration: "20-60s reviews",
-      description: "Genuine testimonials and reviews that build trust and credibility with potential customers.",
-      features: ["Honest feedback", "Trust building", "Social proof", "Authentic voice"]
+      title: t('services.testimonial.title'),
+      duration: t('services.testimonial.duration'),
+      description: t('services.testimonial.desc'),
+      features: [t('services.testimonial.feature1'), t('services.testimonial.feature2'), t('services.testimonial.feature3'), t('services.testimonial.feature4')]
     }
   ];
 
@@ -37,11 +40,10 @@ const ServicesSection = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="font-heading text-4xl lg:text-5xl font-bold mb-6">
-            <span className="text-gradient">Services</span> I Offer
+            <span className="text-gradient">{t('services.title')}</span> {t('services.title.highlight')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            From concept to final cut, I create authentic UGC content that resonates 
-            with your audience and drives measurable results for your brand.
+            {t('services.subtitle')}
           </p>
         </div>
 
@@ -92,10 +94,10 @@ const ServicesSection = () => {
         <div className="text-center mt-16">
           <div className="bg-white rounded-2xl p-8 shadow-elegant border border-neutral-200 max-w-4xl mx-auto">
             <h3 className="font-heading text-3xl font-bold mb-4">
-              Ready to Create <span className="text-gradient">Amazing Content</span>?
+              {t('services.cta.title')} <span className="text-gradient">{t('services.cta.title.highlight')}</span>?
             </h3>
             <p className="text-neutral-600 mb-6 text-lg">
-              Let's discuss your project and create content that drives real results for your brand.
+              {t('services.cta.subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
              
