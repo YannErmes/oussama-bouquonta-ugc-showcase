@@ -81,7 +81,7 @@ const VideoPortfolio = () => {
             variant="creative"
             size="xl"
             className="group"
-            onClick={() => window.open('https://wa.me/+212123456789', '_blank')}
+            onClick={() => window.open('https://wa.me/+212650792723', '_blank')}
           >
             <Play className="mr-3 h-6 w-6 group-hover:scale-110 transition-transform" />
             See More Work & Get Quote
